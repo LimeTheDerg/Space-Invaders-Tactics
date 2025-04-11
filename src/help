@@ -1,0 +1,82 @@
+----------Intro----------
+The year is 20XX, humans have conquered much of the galaxy.
+Recently, invaders from a different galaxy have invaded, they threaten to destroy the human race.
+Their suprise-attack has destroyed most of our defenses, the only thing that can stop the extinction of the human race is...
+YOU
+You are the commander of a supercruiser battleship, the crown jewel of human military. This single ship is capable of wiping fleets of foes.
+Your job is to eliminate all enemy presence from the galaxy.
+Be careful not to die out there. Humanity depends on you.
+Good luck commander.
+Type "help" to learn how to play the game
+-----------HOW TO PLAY THE GAME----------
+
+The map is organized by zones and sectors, one sector contains 100 zones in a 10x10 grid and there are 25 sectors
+Enemies outside your sector cannot attack you and you cannot attack enemies in other sectors.
+Sectors will contain obstructions represented as a '*' character, you cannot move through or fire through these
+
+In the larger galaxy map, each sector is represented with square brackets []
+The leftmost number represents the number of bases in the sector, moving to a zone next to it will let you make repairs and replenish weapons
+The rightmost number represents the number of enemies in the sector
+
+AVAILABLE COMMANDS
+(Commands are not case-sensitive)
+
+help
+    Displays an information panel on how to play the game
+
+status
+    Displays various statistics, such as hull integrity, shields, missle count, number of enemies left, etc.
+
+show zone
+    Displays the contents of the sector the player is in
+    A '*' means an obstruction that cannot be fired or moved through (Note: can be used to hide from enemies)
+    An enemy is depicted as a number in the map, the number represented is the class of the ship
+    There are 3 classes of ships, Class 1, Class 2, and Class 3 (Class 3 is the strongest)
+    Bases are depicted as a 'B' moving to a zone adjacent to them allows you to restock and repair
+
+show sector
+    Displays the entire galactic map, each sector is depicted as square brackets []
+    The leftmost number is the number of bases in the sector
+    The rightmost number is the number of enemies in the sector
+
+move <x-increment> <y-increment> (Note: do not type in the "<>", simply type in the number)
+    Moves the player.
+    x-increment:
+        This is how much the player should move by on the x-axis
+    y-increment:
+        This is how much the player should move by on the y-axis
+    Example: Suppose the player is in zone (3, 0), the command "move 5 1" will have the player move to zone 8 1
+    The player can move across sectors with this command, to move sectors, issue a command that would move the player out of bounds of the sector it is currently in
+    If an obstruction is detected along the specified path, you will be notified of the location of the obstruction and the command will not be issued
+    Attempting to cross galactic borders will warn you that there is an obstruction at (-1, -1)
+
+replenish shields <energy-points>
+    Replenishes the player's shield, the amount of shield points will be increased by <energy points>
+    If you replenish the shield to over 100%, the extra energy will simply be expended and the shield will be capped at 100%
+
+fire laser <x-coordinate> <y-coordinate> <energy>
+    Fire a laser at the given zone, where zone is (<x-coordinate>, <y-coordinate>)
+    The amount of damage the laser does is equivalent to <energy>
+    Which means that you can one-shot the strongest enemy but you will spend a lot of energy in doing so
+    Be careful not to lose all your energy or the game will end
+    The benefit of using lasers is that it does double damage on enemy shields, ideally the first shot on an enemy should be a laser
+    Lasers have a shorter range than missles
+
+fire missle <x-coordinate> <y-coordinate>
+    Fire a missle at the given zone, where zone is (<x-coordinate>, <y-coordinate>)
+    A missle does exactly 100 damage
+    Missles do the same damage to both enemy shields and hull
+    Missles have double the range of lasers
+    You have a set amount of missles and they can be replenished at bases
+
+SOME MECHANICS
+
+Bases:
+    If you move your ship to a zone adjacent to a base, depicted as a 'B' on the zone map, energy, shields, hull, and missles will be replenished
+
+Some notes on enemies:
+    Enemies cannot fire through obstructions, which means you can hide behind them to avoid damage
+    Enemies do not move
+    Upon issuing certain commands, an enemy turn will be initiated, any enemy in the sector you are in will fire at you, commands such as "show zone" will not initiate an enemy turn.
+
+----------END----------
