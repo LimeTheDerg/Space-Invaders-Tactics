@@ -25,7 +25,7 @@ help
     Displays an information panel on how to play the game
 
 status
-    Displays various statistics, such as hull integrity, shields, missle count, number of enemies left, etc.
+    Displays various statistics, such as hull integrity, shields, missile count, number of enemies left, etc.
 
 show zone
     Displays the contents of the sector the player is in
@@ -60,19 +60,19 @@ fire laser <x-coordinate> <y-coordinate> <energy>
     Which means that you can one-shot the strongest enemy but you will spend a lot of energy in doing so
     Be careful not to lose all your energy or the game will end
     The benefit of using lasers is that it does double damage on enemy shields, ideally the first shot on an enemy should be a laser
-    Lasers have a shorter range than missles
+    Lasers have a shorter range than missiles
 
-fire missle <x-coordinate> <y-coordinate>
-    Fire a missle at the given zone, where zone is (<x-coordinate>, <y-coordinate>)
-    A missle does exactly 100 damage
-    Missles do the same damage to both enemy shields and hull
-    Missles have double the range of lasers
-    You have a set amount of missles and they can be replenished at bases
+fire missile <x-coordinate> <y-coordinate>
+    Fire a missile at the given zone, where zone is (<x-coordinate>, <y-coordinate>)
+    A missile does exactly 100 damage
+    missiles do the same damage to both enemy shields and hull
+    missiles have double the range of lasers
+    You have a set amount of missiles and they can be replenished at bases
 
 SOME MECHANICS
 
 Bases:
-    If you move your ship to a zone adjacent to a base, depicted as a 'B' on the zone map, energy, shields, hull, and missles will be replenished
+    If you move your ship to a zone adjacent to a base, depicted as a 'B' on the zone map, energy, shields, hull, and missiles will be replenished
 
 Some notes on enemies:
     Enemies cannot fire through obstructions, which means you can hide behind them to avoid damage
