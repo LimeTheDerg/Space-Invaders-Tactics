@@ -205,9 +205,9 @@ class Laser extends BaseProjectile {
     }
 }
 
-class Missle extends BaseProjectile {
+class missile extends BaseProjectile {
     int sectorX, sectorY, zoneX, zoneY, damage;
-    Missle(int sX, int sY, int zX, int zY) {
+    missile(int sX, int sY, int zX, int zY) {
         sectorX=sX;
         sectorY=sY;
         zoneX=zX;
@@ -221,13 +221,13 @@ class Missle extends BaseProjectile {
         int[] coords = BaseProjectile.findObjectAlongPath(Player.getZoneX(), Player.getZoneY(), zoneX, zoneY, 10);
         if (coords != null) {
             BaseEnemy enemy = BaseEnemy.isEnemyAtCoords(Player.getSectorX(), Player.getSectorY(), coords[0], coords[1]);
-            if (enemy != null) enemy.hitByMissle();
+            if (enemy != null) enemy.hitBymissile();
             return;
         }
         // Contact with the enemy
         BaseEnemy enemy = BaseEnemy.isEnemyAtCoords(sectorX, sectorY, zoneX, zoneY);
         if (enemy != null) {
-            enemy.hitByMissle(); // Deal damage
+            enemy.hitBymissile(); // Deal damage
         }
     }
 }
