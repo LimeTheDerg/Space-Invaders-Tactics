@@ -71,7 +71,7 @@ public class BaseEnemy {
         return count;
     }
     void hitByLaser(int damage) {}
-    void hitByMissle() {}
+    void hitBymissile() {}
 }
 
 class ClassIEnemy extends BaseEnemy {
@@ -102,9 +102,9 @@ class ClassIEnemy extends BaseEnemy {
         }
     }
     @Override
-    void hitByMissle() {
+    void hitBymissile() {
         int damage = 100;
-        System.out.println("MISSLE CONNECTED: ENEMY HIT");
+        System.out.println("missile CONNECTED: ENEMY HIT");
         if (damage >= shield) {
             damage -= shield;
             shield = 0;
@@ -146,9 +146,9 @@ class ClassIIEnemy extends BaseEnemy {
             System.out.println("ENEMY DESTROYED");
         }
     }
-    void hitByMissle() {
+    void hitBymissile() {
         int damage = 100;
-        System.out.println("MISSLE CONNECTED: ENEMY HIT");
+        System.out.println("missile CONNECTED: ENEMY HIT");
         if (damage >= shield) {
             damage -= shield;
             shield = 0;
@@ -190,9 +190,9 @@ class ClassIIIEnemy extends BaseEnemy {
             System.out.println("ENEMY DESTROYED");
         }
     }
-    void hitByMissle() {
+    void hitBymissile() {
         int damage = 100;
-        System.out.println("MISSLE CONNECTED: ENEMY HIT");
+        System.out.println("missile CONNECTED: ENEMY HIT");
         if (damage >= shield) {
             damage -= shield;
             shield = 0;
