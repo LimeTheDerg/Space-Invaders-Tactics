@@ -45,8 +45,8 @@ public class BaseCommand {
             if (parsedCommand[1].equalsIgnoreCase("laser")) {
                 result = new FireLaserCommand(x2, y2, damage);
             }
-            else if (parsedCommand[1].equalsIgnoreCase("missle")) {
-                result =  new FireMissleCommand(x2, y2);
+            else if (parsedCommand[1].equalsIgnoreCase("missile")) {
+                result =  new FiremissileCommand(x2, y2);
             }
         }
         if (parsedCommand[0].equalsIgnoreCase("status") && parsedCommand.length == 1) {
@@ -114,7 +114,7 @@ class MoveCommand extends BaseCommand {
                 Player.setEnergy(750);
                 Player.setHull(100);
                 Player.setShield(100);
-                Player.setMissleCount(7);
+                Player.setmissileCount(7);
                 System.out.println("SHIP WEAPONS REPLENISHED AND DAMAGES REPAIRED");
             }
         } else {
@@ -168,23 +168,23 @@ class FireLaserCommand extends BaseCommand {
     }
 }
 
-class FireMissleCommand extends BaseCommand {
+class FiremissileCommand extends BaseCommand {
     int x2;
     int y2;
     int damage;
-    FireMissleCommand(int x2, int y2) {
+    FiremissileCommand(int x2, int y2) {
         this.x2 = x2;
         this.y2 = y2;
     }
     @Override
     public void execute() {
-        if (Player.getMissleCount() <= 0) {
-            System.out.println("NO MISSLES LEFT IN SILOS");
+        if (Player.getmissileCount() <= 0) {
+            System.out.println("NO missileS LEFT IN SILOS");
             return;
         }
-        BaseProjectile missle = new Missle(Player.getSectorX(), Player.getSectorY(), x2, y2);
-        missle.fire();
-        Player.setMissleCount(Player.getMissleCount()-1);
+        BaseProjectile missile = new missile(Player.getSectorX(), Player.getSectorY(), x2, y2);
+        missile.fire();
+        Player.setmissileCount(Player.getmissileCount()-1);
     }
     boolean enemyTurn() {
         return true;
@@ -197,7 +197,7 @@ class StatusCommand extends BaseCommand {
         System.out.println("Hull integrity is at " + Player.getHull() + "%");
         System.out.println("Shields are at " + Player.getShield() + "%");
         System.out.println("Ship has " + Player.getEnergy() + " points of energy left");
-        System.out.println(Player.getMissleCount() + " Missles remaining in silos");
+        System.out.println(Player.getmissileCount() + " missiles remaining in silos");
         System.out.println("There are " + BaseEnemy.enemies.size() + " enemies left");
     }boolean enemyTurn() {
         return false;
