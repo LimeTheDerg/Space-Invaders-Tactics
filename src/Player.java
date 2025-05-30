@@ -10,14 +10,14 @@ public class Player {
     private static int energy = 750;
     private static int hull = 100;
     private static int shield = 100;
-    private static int missleCount = 7;
+    private static int missileCount = 7;
     // Getter and setter methods
     public static int getEnergy() {return energy;}
     public static void setEnergy(int energy) {Player.energy = energy;}
     public static int getShield() {return shield;}
     public static int getHull() {return hull;}
-    public static int getMissleCount() {return missleCount;}
-    public static void setMissleCount(int missleCount) {Player.missleCount = missleCount;}
+    public static int getmissileCount() {return missileCount;}
+    public static void setmissileCount(int missileCount) {Player.missileCount = missileCount;}
     static int getZoneX() {return zoneX;}
     static int getZoneY() {return zoneY;}
     static int getSectorX() {return sectorX;}
